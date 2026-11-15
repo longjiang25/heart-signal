@@ -30,15 +30,7 @@ python -m http.server 8000
 powershell -ExecutionPolicy Bypass -File .\deploy.ps1
 ```
 
-脚本会通过 GitHub API 上传最新文件（绕开 git push 网络问题），约 1 分钟后线上自动更新。
-
-如果你的网络可以正常直连 github.com，也可以直接用常规的 git 流程：
-
-```powershell
-git add -A
-git commit -m "更新内容"
-git push
-```
+脚本会通过 GitHub API 上传最新文件（当前网络无法直连 github.com，所以不走 git push），约 1 分钟后线上自动更新。
 
 备用方案：也可以把整个 `heart-signal` 文件夹拖到 https://app.netlify.com/drop 免费部署。
 
